@@ -5,6 +5,7 @@ use App\Container;
 use App\Models\Post;
 use App\Collaborator;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/posts', function(){
-    $posts = Post::all();
-    foreach($posts as $post){
-        echo $post->comments;
-    }
-});
+Route::get('/posts', [PostController::class, 'index']);
