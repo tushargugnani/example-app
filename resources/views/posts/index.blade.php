@@ -1,3 +1,5 @@
-@foreach($posts as $post){
-  {{$post->comments}}
+@foreach($posts as $post)
+  @foreach($post->comments as $comment)
+    {{$comment->body}}<br/>
+  @endforeach
 @endforeach
