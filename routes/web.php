@@ -5,6 +5,7 @@ use App\Container;
 use App\Models\Post;
 use App\Collaborator;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
