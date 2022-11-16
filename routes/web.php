@@ -2,6 +2,7 @@
 
 use App\Example;
 use App\Container;
+use App\Models\Post;
 use App\Collaborator;
 use Illuminate\Support\Facades\Route;
 
@@ -16,14 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-app()->singleton('App\Example', function(){
-    return new Example();
-});
-
-Route::get('/', function () {
-    $example1 = resolve('App\Example');
-    $example2 = resolve('App\Example');
-    dump($example1);
-    dump($example2);
-    return view('welcome');
+Route::get('/posts', function(){
+    $posts = Post::all();
+    foreach($posts as $post){
+        echo $post->comments;
+    }
 });
